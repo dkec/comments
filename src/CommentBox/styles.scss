@@ -1,0 +1,115 @@
+* {
+  box-sizing:border-box;
+}
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: fit-content;
+  min-width: fit-content;
+
+  & textarea {
+    border-radius: 4px;
+    padding: .5rem;
+    font-size: 1rem;
+    color: rgba(0,0,0,0.7);
+    resize: none;
+    overflow:none;
+    padding: .7rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    outline:none;
+
+    border: none;
+    box-shadow: 0px 1px 4px 0px rgba(27, 26, 26, 0.34);
+
+  }
+
+  & label {
+    text-transform: capitalize;
+    margin: 1rem 0 .5rem;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    & span {
+      text-transform: lowercase;
+      font-size:.7rem;
+      font-size: .6rem;
+      color: rgba(0, 0, 0, 0.4117647058823529);
+    }
+  }
+
+  &__suggestions{
+    position: absolute;
+    background-color: #fff;
+    max-height: 400px;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    bottom: 0;
+    transform: translateY(102%);
+    box-shadow: 0px 13px 11px 4px rgba(27, 26, 26, 0.10);
+
+    &.--show{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    & li {
+      list-style: none;
+      text-transform: capitalize;
+      width: 100%;
+      text-align: left;
+      padding: .3rem 1rem;
+      display: flex;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(64, 169, 243, 0.250);
+      }
+    }
+
+    &__names {
+      display: flex;
+      align-items: center;
+      font-size: .8rem;
+      letter-spacing: 1px;
+     
+      & p {
+        margin: 0;
+        margin-left: .5rem;
+        color: rgba(0,0,0,0.6)
+      }
+
+      & b {
+        color: rgba(0,0,0,0.8)
+      }
+    }
+
+    &__footer{
+      font-size: .6rem;
+      background: #9e9e9e14;
+      color: rgba(0, 0, 0, 0.4117647058823529);
+      margin-top: .2rem;
+      text-align: left;
+      padding: .5rem 1rem;
+    }
+  }
+
+  &__avatar {
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 30px;
+    max-width: 30px;
+    margin-right: .5rem;
+
+    & img {
+      object-fit: contain;
+      object-position: center;
+      max-width: 100%;
+
+    }
+  }
+}
